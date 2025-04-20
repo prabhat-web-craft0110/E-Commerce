@@ -1,53 +1,51 @@
 import React from "react";
 
-const LoginPage = () => {
-  return(
-  <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 to-purple-200 p-4">
-  <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8 space-y-6">
-    <h2 className="text-3xl font-bold text-center text-purple-800">Sign In</h2>
-    
-    <form className="space-y-4">
-      <div>
-        <label className="block text-sm font-medium text-purple-700">Email</label>
-        <input
-          type="email"
-          placeholder="you@example.com"
-          className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-        />
-      </div>
+export default function Login() {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-200 to-purple-200 p-4">
+    <div className="bg-white shadow-md rounded-xl p-8 w-full max-w-md transition-all duration-500 hover:scale-105">
+      <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Login to Your Account</h2>
       
-      <div>
-        <label className="block text-sm font-medium text-purple-700">Password</label>
-        <input
-          type="password"
-          placeholder="••••••••"
-          className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-        />
+      <form className="space-y-4">
+        <div>
+          <label className="block text-gray-700 mb-1" htmlFor="email">Email</label>
+          <input
+            id="email"
+            type="email"
+            placeholder="Enter your email"
+            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+          />
+        </div>
+  
+        <div>
+          <label className="block text-gray-700 mb-1" htmlFor="password">Password</label>
+          <input
+            id="password"
+            type="password"
+            placeholder="Enter your password"
+            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-400"
+          />
+        </div>
+  
+        <button
+          type="submit"
+          className="w-full bg-purple-500 text-white py-2 rounded-lg hover:bg-purple-600 transition"
+        >
+          Login
+        </button>
+      </form>
+  
+      <div className="text-center mt-4 text-sm">
+        <a href="/forgot-password" className="text-blue-600 hover:underline">Forgot Password?</a>
       </div>
-
-      <div className="flex items-center justify-between text-sm">
-        <label className="flex items-center gap-2">
-          <input type="checkbox" className="h-4 w-4 text-purple-700" />
-          Remember me
-        </label>
-        <a href="/forgot-password" className="text-purple-500 hover:underline">Forgot Password?</a>
+  
+      <div className="text-center mt-2 text-sm">
+        <span>Don't have an account? </span>
+        <a href="/signup" className="text-blue-600 hover:underline">Sign Up</a>
       </div>
-
-      <button
-        type="submit"
-        className="w-full bg-gray-500 text-white font-semibold py-2 rounded-lg hover:bg-purple-700 transition"
-      >
-        Sign In
-      </button>
-    </form>
-
-    <p className="text-sm text-center text-gray-800">
-      Don't have an account?{" "}
-      <a href="/signup" className="text-purple-500 hover:underline">Sign Up</a>
-    </p>
+  
+    </div>
   </div>
-</div>
-  )
-};
-
-export default LoginPage;
+  
+  );
+}
